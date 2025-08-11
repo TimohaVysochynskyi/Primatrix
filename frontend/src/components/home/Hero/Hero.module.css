@@ -1,0 +1,253 @@
+.hero {
+  width: 100%;
+  height: 100vh;
+  padding-top: 72px;
+  background-image: url("/images/hero-bg.png");
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+.nav {
+  width: 100%;
+  height: 40px;
+  background-color: #280887;
+  transition: transform 0.35s ease;
+}
+.list {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 40px;
+}
+.link {
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.content {
+  margin-top: 60px;
+  width: 100%;
+  height: calc(100% - 40px - 60px);
+  padding: 0px 72px 60px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+.title {
+  font-size: clamp(28px, 4.44vw, 64px);
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 105%;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+.title span {
+  color: #5315fc;
+}
+.description {
+  font-size: 20px;
+  color: #a0a3aa;
+  text-align: center;
+  line-height: 100%;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 40px 56px;
+  width: 100%;
+}
+.windows {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.windowsIcon {
+  width: 36px;
+  height: 36px;
+}
+.windowsText {
+  font-size: 14px;
+  color: #410fd3;
+  text-transform: uppercase;
+  width: 130px;
+}
+.downloadButton,
+.infoButton {
+  height: 64px;
+  aspect-ratio: 258 / 62;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+}
+.downloadButton {
+  aspect-ratio: 263 / 67;
+}
+.downloadButtonText,
+.infoButtonText {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(14px, 1.25vw, 20px);
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 100%;
+  padding: 0 12px;
+  text-align: center;
+}
+.downloadButtonText {
+  height: calc(100% - 5px);
+  width: calc(100% - 5px);
+}
+.infoButtonText {
+  color: #410fd3;
+}
+
+@media screen and (max-width: 1200px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 50vw;
+    max-width: 420px;
+    background: rgba(40, 8, 135, 0.98);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: flex-start;
+    padding-top: 120px;
+    transform: translateX(-100%);
+    flex-direction: column;
+    z-index: 180;
+  }
+  .nav.open {
+    transform: translateX(0);
+  }
+  .list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 0 40px;
+    height: auto;
+  }
+  .link {
+    font-size: 20px;
+  }
+  .content {
+    padding: 0 40px 60px 40px;
+  }
+  .title {
+    font-size: clamp(32px, 5vw, 48px);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .title {
+    .actions {
+      gap: 32px 40px;
+    }
+  }
+  .description {
+    font-size: 18px;
+  }
+  .actions {
+    gap: 32px;
+  }
+  .link {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav {
+    width: 60vw;
+  }
+  .title {
+    font-size: clamp(30px, 6vw, 42px);
+  }
+  .description {
+    font-size: 16px;
+  }
+  .content {
+    margin-top: 40px;
+  }
+  .link {
+    font-size: 16px;
+  }
+  .actions {
+    gap: 32px 32px;
+  }
+  .downloadButton,
+  .infoButton {
+    height: 58px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .nav {
+    width: 75vw;
+  }
+  .title {
+    font-size: clamp(26px, 7vw, 32px);
+  }
+  .content {
+    padding: 0 24px 48px 24px;
+  }
+
+  .actions {
+    gap: 28px 24px;
+  }
+  .downloadButton,
+  .infoButton {
+    height: 54px;
+  }
+  .downloadButtonText,
+  .infoButtonText {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .title {
+    font-size: clamp(24px, 8vw, 28px);
+  }
+  .description {
+    font-size: 14px;
+  }
+  .list {
+    gap: 20px;
+    padding: 0 28px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .title {
+    font-size: 22px;
+  }
+  .downloadButton,
+  .infoButton {
+    height: 50px;
+  }
+  .link {
+    font-size: 15px;
+  }
+}

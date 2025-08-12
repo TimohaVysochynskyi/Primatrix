@@ -103,7 +103,6 @@
   cursor: pointer;
   background: transparent;
   border: none;
-  padding: 8px;
   position: relative;
   z-index: 250;
 }
@@ -123,6 +122,53 @@
   transform: translateY(-8px) rotate(-45deg);
 }
 
+/* Mobile menu drawer */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 60vw;
+  max-width: 420px;
+  background: rgba(20, 18, 32, 0.98);
+  backdrop-filter: blur(4px);
+  padding: 120px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  z-index: 240;
+  animation: slideIn 0.35s ease forwards;
+}
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.mobileMenuList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+.mobileLink {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 230;
+}
+
 @media screen and (max-width: 1200px) {
   .nav {
     display: none;
@@ -136,13 +182,25 @@
   .header {
     padding: 12px 40px;
   }
+  .mobileLink {
+    font-size: 18px;
+  }
 }
 @media screen and (max-width: 768px) {
-  .title {
-    display: none;
-  }
   .header {
     padding: 12px 24px;
+    flex-direction: column;
+    gap: 8px;
+    height: auto;
+  }
+  .burger {
+    position: absolute;
+    top: 12px;
+    left: 24px;
+  }
+  .title {
+    font-size: 20px;
+    margin-left: 40px;
   }
   .button {
     padding: 8px 28px;

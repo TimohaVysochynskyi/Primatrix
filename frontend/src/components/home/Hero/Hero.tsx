@@ -1,69 +1,20 @@
 import css from "./Hero.module.css";
 import { useScrollToSection } from "../../../hooks/useScrollToSection";
-import { useUI } from "../../../context/UIContext";
+import SectionNav from "../SectionNav/SectionNav";
 
 export default function Hero() {
   const scrollToSection = useScrollToSection(150);
-  const { mobileHeroMenuOpen, closeMobileHeroMenu } = useUI();
 
   return (
     <>
       <div className={css.hero}>
-        <nav className={`${css.nav} ${mobileHeroMenuOpen ? css.open : ""}`}>
-          <ul className={css.list}>
-            <li>
-              <button
-                className={css.link}
-                onClick={() => scrollToSection("news")}
-              >
-                Новости
-              </button>
-            </li>
-            <li>
-              <button
-                className={css.link}
-                onClick={() => scrollToSection("gallery")}
-              >
-                Галерея
-              </button>
-            </li>
-            <li>
-              <button
-                className={css.link}
-                onClick={() => scrollToSection("subscribe")}
-              >
-                Подписка на новости
-              </button>
-            </li>
-            <li>
-              <button
-                className={css.link}
-                onClick={() => scrollToSection("ideas")}
-              >
-                Сбор идей
-              </button>
-            </li>
-            <li>
-              <button
-                className={css.link}
-                onClick={() => scrollToSection("contacts")}
-              >
-                Контакты
-              </button>
-            </li>
-          </ul>
-        </nav>
-        {mobileHeroMenuOpen && (
-          <div
-            onClick={closeMobileHeroMenu}
-            style={{
-              position: "fixed",
-              inset: 0,
-              background: "rgba(0,0,0,0.4)",
-              zIndex: 150,
-            }}
+        <nav className={css.nav}>
+          <SectionNav
+            className={css.list}
+            linkClassName={css.link}
+            onNavigate={(id) => scrollToSection(id)}
           />
-        )}
+        </nav>
         <div className={css.content}>
           <div className={css.titleWrapper}>
             <h2 className={css.title}>

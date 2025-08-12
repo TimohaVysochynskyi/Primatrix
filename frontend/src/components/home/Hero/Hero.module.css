@@ -48,7 +48,6 @@
   flex-direction: column;
   gap: 24px;
   max-width: 1200px;
-  padding: 0 20px;
 }
 .title {
   font-size: clamp(28px, 4.44vw, 64px);
@@ -128,35 +127,6 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 50vw;
-    max-width: 420px;
-    background: rgba(40, 8, 135, 0.98);
-    backdrop-filter: blur(4px);
-    display: flex;
-    align-items: flex-start;
-    padding-top: 120px;
-    transform: translateX(-100%);
-    flex-direction: column;
-    z-index: 180;
-  }
-  .nav.open {
-    transform: translateX(0);
-  }
-  .list {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 28px;
-    padding: 0 40px;
-    height: auto;
-  }
-  .link {
-    font-size: 20px;
-  }
   .content {
     padding: 0 40px 60px 40px;
   }
@@ -165,33 +135,28 @@
   }
 }
 @media screen and (max-width: 1024px) {
-  .title {
-    .actions {
-      gap: 32px 40px;
-    }
-  }
   .description {
     font-size: 18px;
   }
   .actions {
-    gap: 32px;
+    gap: 32px 40px;
+  }
+  .list {
+    gap: 30px;
   }
   .link {
-    font-size: 18px;
+    font-size: 15px;
   }
 }
 @media screen and (max-width: 768px) {
   .nav {
-    width: 60vw;
+    display: none;
   }
   .title {
     font-size: clamp(30px, 6vw, 42px);
   }
   .description {
     font-size: 16px;
-  }
-  .content {
-    margin-top: 40px;
   }
   .link {
     font-size: 16px;

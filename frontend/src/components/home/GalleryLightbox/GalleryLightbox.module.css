@@ -1,0 +1,274 @@
+/* Internal animation wrapper */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  width: 100%;
+  height: 100%;
+}
+.wrapper.open {
+  opacity: 1;
+}
+.wrapper.closing {
+  opacity: 0;
+}
+
+/* Modal */
+.modal {
+  position: relative;
+  width: min(1200px, 95%);
+  max-height: 80vh;
+  background: linear-gradient(180deg, #141220 0%, #12043f 100%);
+  border: 3px solid rgba(65, 15, 211, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transform: scale(0.92) translateY(10px);
+  opacity: 0;
+  padding: 44px 56px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.wrapper.open .modal {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+.wrapper.closing .modal {
+  transform: scale(0.92) translateY(10px);
+  opacity: 0;
+}
+
+.imageFrame {
+  width: 100%;
+  padding: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.image {
+  width: 100%;
+  height: auto;
+  max-height: 60vh;
+  object-fit: cover;
+  display: block;
+  z-index: 2;
+}
+.imageFrame::before,
+.imageFrame::after {
+  content: "";
+  position: absolute;
+  height: 50%;
+  width: 80%;
+  pointer-events: none;
+  background: radial-gradient(
+    49.92% 100.56% at 50.08% 100%,
+    #875ffe 0%,
+    #410fd3 10%,
+    rgba(18, 4, 63, 0) 100%
+  );
+  mix-blend-mode: normal;
+  z-index: 1;
+  opacity: 0.55;
+}
+.imageFrame::before {
+  top: 0;
+  transform: rotate(180deg);
+}
+.imageFrame::after {
+  bottom: 0;
+}
+.cornersWrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.corner {
+  width: 20%;
+  aspect-ratio: 208 / 115;
+  position: absolute;
+}
+.corner:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+.corner:nth-child(2) {
+  top: 0;
+  right: 0;
+  transform: scaleX(-100%);
+}
+.corner:nth-child(3) {
+  bottom: 0;
+  left: 0;
+  transform: scaleY(-100%);
+}
+.corner:nth-child(4) {
+  bottom: 0;
+  right: 0;
+  transform: rotate(180deg);
+}
+
+/* Controls */
+.closeBtn {
+  position: absolute;
+  top: 21px;
+  right: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+  z-index: 4;
+}
+.closeBtn:hover {
+  transform: scale(1.1);
+}
+.closeIcon {
+  width: 20px;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  z-index: 4;
+  padding: 0;
+}
+.navButton:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.navButton:hover:not(:disabled) {
+  transform: translateY(-50%) scale(1.15);
+}
+.prev {
+  left: 20px;
+}
+.next {
+  right: 20px;
+}
+.arrowIcon {
+  width: 36px;
+}
+.prev .arrowIcon {
+  transform: rotate(180deg);
+}
+.counter {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(135, 95, 254, 1);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 1400px) {
+  .counter {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .modal {
+    padding: 40px 50px;
+  }
+  .arrowIcon {
+    width: 32px;
+  }
+  .prev {
+    left: 22px;
+  }
+  .next {
+    right: 22px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .modal {
+    padding: 32px 40px;
+  }
+  .arrowIcon {
+    width: 28px;
+  }
+  .prev {
+    left: 16px;
+  }
+  .next {
+    right: 16px;
+  }
+  .counter {
+    bottom: 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .closeBtn {
+    top: 12px;
+    right: 12px;
+  }
+  .closeIcon {
+    width: 16px;
+  }
+  .arrowIcon {
+    width: 24px;
+  }
+  .imageFrame {
+    padding: 24px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .modal {
+    padding: 24px 32px;
+  }
+  .imageFrame {
+    padding: 0;
+  }
+  .cornersWrapper {
+    display: none;
+  }
+  .arrowIcon {
+    width: 18px;
+  }
+  .prev {
+    left: 8px;
+  }
+  .next {
+    right: 8px;
+  }
+  .closeIcon {
+    width: 12px;
+  }
+  .closeBtn {
+    top: 10px;
+    right: 10px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .modal {
+    width: 100%;
+  }
+  .arrowIcon {
+    width: 16px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .arrowIcon {
+    width: 14px;
+  }
+  .modal {
+    padding: 20px 24px;
+  }
+  .prev {
+    left: 4px;
+  }
+  .next {
+    right: 4px;
+  }
+}

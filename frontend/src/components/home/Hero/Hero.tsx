@@ -21,9 +21,9 @@ export default function Hero() {
               Добро пожаловать в будущее, где искра — <span>начало всего.</span>
             </h2>
             <p className={css.description}>
-              PRIMATRIX: Rise of Sparkborn — новая оригинальная sci-fi-сага о
-              трансформирующихся цивилизациях, древних конфликтах и великой
-              тайне Искры.
+              PRIMATRIX: Rise of Sparkborn — <br className={css.mobileBr} />{" "}
+              новая оригинальная sci-fi-сага о трансформирующихся цивилизациях,
+              древних конфликтах и великой тайне Искры.
             </p>
           </div>
           <div className={css.actions}>

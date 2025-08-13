@@ -28,6 +28,8 @@
   gap: 20px;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 .slide {
   min-width: 28%;

@@ -39,7 +39,7 @@ export default function News() {
   const handleNext = () => scrollBy(1);
 
   return (
-    <div className={css.container} id="news">
+    <section className={css.container} id="news">
       <h2 className={css.title}>
         Новости <span>о проекте</span>
       </h2>
@@ -78,6 +78,6 @@ export default function News() {
           />
         </button>
       </div>
-    </div>
+    </section>
   );
 }

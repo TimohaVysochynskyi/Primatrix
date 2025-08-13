@@ -1,0 +1,296 @@
+.container {
+  width: 100%;
+  height: 55vh;
+  padding: 40px 72px;
+  background: linear-gradient(360deg, #410fd3 00%, rgba(18, 4, 63, 0) 75%);
+  display: flex;
+  justify-content: space-between;
+}
+.sliderWrapper {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.viewport {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.track {
+  display: flex;
+  gap: 12px;
+  height: 100%;
+  transition: transform 0.5s ease;
+  margin: 0;
+  padding: 0;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  flex: 0 0 auto;
+}
+.imageWrapper {
+  flex: 1 1 50%;
+  border: 3px solid rgba(135, 95, 254, 1);
+  overflow: hidden;
+  position: relative;
+  background-color: rgba(40, 8, 135, 1);
+  padding: 0;
+  cursor: pointer;
+}
+.imageWrapper .image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0.85;
+}
+.imageWrapper:hover .image {
+  transform: scale(1.04);
+  opacity: 1;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.75;
+  transition: 0.3s;
+}
+.arrowButton {
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+.arrowButton:hover {
+  transform: scale(1.05);
+}
+.arrowButton:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.arrow {
+  width: 36px;
+}
+.nextButton {
+  right: -46px;
+}
+.previousButton {
+  left: -46px;
+}
+.previousButton .arrow {
+  transform: rotate(180deg);
+}
+.descriptionWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  width: calc(35% - 40px);
+  height: 100%;
+}
+.title {
+  font-size: 42px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 100%;
+  text-align: right;
+}
+.title span {
+  color: rgba(83, 21, 252, 1);
+}
+
+/* Modal */
+.modal {
+  position: relative;
+  width: min(1200px, 90vw);
+  background: #12073c;
+  border: 3px solid #5315fc;
+  padding: 48px 56px 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 0 0 4px rgba(83, 21, 252, 0.4),
+    0 20px 60px -10px rgba(0, 0, 0, 0.8);
+}
+.modalImage {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: cover;
+  border: 3px solid #875ffe;
+  box-shadow: 0 0 40px -4px #5315fc inset;
+}
+.modalClose {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 32px;
+  background: transparent;
+  border: none;
+  color: #875ffe;
+  cursor: pointer;
+  line-height: 1;
+  transition: transform 0.3s;
+}
+.modalClose:hover {
+  transform: scale(1.15);
+}
+.modalNavBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #875ffe;
+  font-size: 64px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 8px 16px;
+  transition: color 0.3s, transform 0.3s;
+}
+.modalNavBtn:hover {
+  color: #fe6807;
+  transform: translateY(-50%) scale(1.1);
+}
+.modalPrev {
+  left: 10px;
+}
+.modalNext {
+  right: 10px;
+}
+.modalCounter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #875ffe;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 768px) {
+  .modal {
+    padding: 32px 32px 56px;
+  }
+  .modalNavBtn {
+    font-size: 48px;
+  }
+  .modalClose {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .modal {
+    padding: 24px 24px 48px;
+  }
+  .modalNavBtn {
+    font-size: 40px;
+  }
+  .modalClose {
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 1650px) {
+  .title {
+    font-size: 38px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .container {
+    height: 45vh;
+  }
+  .sliderWrapper {
+    width: 60%;
+  }
+  .descriptionWrapper {
+    width: calc(40% - 40px);
+  }
+  .title {
+    font-size: 36px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .container {
+    flex-direction: column-reverse;
+    height: auto;
+    gap: 40px;
+  }
+  .sliderWrapper {
+    width: 100%;
+  }
+  .descriptionWrapper {
+    width: 100%;
+    align-items: center;
+  }
+  .title {
+    text-align: center;
+  }
+  .title br {
+    display: none;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 34px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 32px 40px;
+  }
+  .sliderWrapper {
+    padding: 0 32px;
+  }
+  .arrow {
+    width: 24px;
+  }
+  .nextButton {
+    right: -2px;
+  }
+  .previousButton {
+    left: -2px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .container {
+    padding: 32px 24px;
+  }
+  .sliderWrapper {
+    padding: 0 16px;
+  }
+  .title {
+    font-size: 26px;
+  }
+  .nextButton {
+    right: -16px;
+  }
+  .previousButton {
+    left: -16px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .title {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .title {
+    font-size: 22px;
+  }
+}

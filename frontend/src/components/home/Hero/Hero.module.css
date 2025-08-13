@@ -125,6 +125,9 @@
 .infoButtonText {
   color: #410fd3;
 }
+.mobileBr {
+  display: none;
+}
 
 @media screen and (max-width: 1200px) {
   .content {
@@ -190,6 +193,11 @@
   .downloadButtonText,
   .infoButtonText {
     font-size: 16px;
+  }
+}
+@media screen and (max-width: 435px) {
+  .mobileBr {
+    display: block;
   }
 }
 @media screen and (max-width: 425px) {

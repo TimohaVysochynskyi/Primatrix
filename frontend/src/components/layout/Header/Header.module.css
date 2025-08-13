@@ -65,6 +65,7 @@
   font-size: 16px;
   text-transform: uppercase;
   padding: 10px 40px;
+  cursor: pointer;
 }
 .button::before,
 .button::after {

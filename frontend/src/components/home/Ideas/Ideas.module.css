@@ -1,0 +1,525 @@
+.container {
+  padding: 40px 72px;
+  background: linear-gradient(180deg, #410fd3 0%, rgba(18, 4, 63, 0) 100%);
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    180deg,
+    rgba(135, 95, 254, 0.4) 0%,
+    rgba(18, 4, 63, 0.4) 100%
+  );
+  border-radius: 0 20px 0 0;
+}
+.top {
+  height: 320px;
+  width: 100%;
+  position: relative;
+  border-radius: inherit;
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  border-radius: inherit;
+  clip-path: polygon(
+    0 0,
+    20% 0,
+    22.5% 18%,
+    100% 18%,
+    100% 82%,
+    80% 82%,
+    77.5% 100%,
+    0% 100%
+  );
+  background-image: url(/images/ideas-top-image.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.imageFilter {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(40, 8, 135, 0.7);
+}
+.topContent {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 72px;
+}
+.title {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  text-transform: uppercase;
+  width: 100%;
+  height: 18%;
+  display: flex;
+  align-items: center;
+}
+.joinTitleWrapper {
+  width: 100%;
+  height: 18%;
+  display: flex;
+  justify-content: flex-end;
+}
+.joinTitle {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  text-transform: uppercase;
+  text-align: right;
+}
+.slogan {
+  color: #fff;
+  font-weight: 700;
+  font-size: 64px;
+  text-transform: uppercase;
+  line-height: 100%;
+}
+
+.formWrapper {
+  padding: 40px 72px;
+  padding-bottom: 100px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 50%;
+}
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.error,
+.inputWrapper span {
+  color: #fff;
+  font-size: 12px;
+}
+.input,
+.textarea {
+  padding: 12px 40px;
+  border: 3px solid rgba(65, 15, 211, 1);
+  background-color: rgba(40, 8, 135, 1);
+  border-radius: 0;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  outline: none;
+  color: #fff;
+  max-width: 100%;
+  min-width: 100%;
+  max-height: max-content;
+  min-height: max-content;
+}
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(83, 21, 252, 1);
+}
+.socials {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.social {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  aspect-ratio: 440 / 47;
+}
+.socialBg {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.socialContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  padding-right: 43px;
+}
+.socialIconWrapper {
+  width: 22%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.socialIcon {
+  width: 30px;
+}
+.socialText {
+  position: relative;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: right;
+}
+.progressWrapper {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 95px;
+  clip-path: polygon(0 50%, 66% 50%, 70% 0, 100% 0, 100% 100%, 0 100%);
+  background-color: rgba(40, 8, 135, 1);
+  overflow: hidden;
+}
+.button {
+  border: none;
+  background-color: rgba(40, 8, 135, 1);
+}
+.progressGrid {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.progressItem,
+.button {
+  width: calc(100% / 3);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 12px 40px;
+}
+.button {
+  justify-content: center;
+  color: rgba(83, 21, 252, 1);
+  background: none;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 100%;
+  text-transform: uppercase;
+  gap: 12px;
+}
+.progressBar {
+  width: 33%;
+  height: 100%;
+  transform: skew(45deg) scaleX(1.1) translateX(-5%);
+  background: linear-gradient(-90deg, #280887 0%, #fe6807 60%);
+  position: relative;
+  z-index: 1;
+  transition: 1s;
+}
+.progressItem:nth-child(1),
+.progressItem:nth-child(2) {
+  height: 50%;
+}
+.numberCircle {
+  width: 26px;
+  height: 26px;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 100%;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Inactive step colors: purple text and border until the bar reaches them */
+.progressInactive .numberCircle,
+.button:not(.buttonActive) .numberCircle,
+.button:not(.buttonActive) {
+  color: rgba(83, 21, 252, 1);
+  border-color: rgba(83, 21, 252, 1);
+}
+
+/* Active submit styling when all fields are filled */
+.buttonActive {
+  color: #fff;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1650px) {
+  .socialText {
+    font-size: 14px;
+  }
+  .socials {
+    width: 35%;
+  }
+  .title,
+  .joinTitle {
+    width: 19%;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .imageWrapper {
+    clip-path: polygon(
+      0 0,
+      25% 0,
+      27.5% 18%,
+      100% 18%,
+      100% 82%,
+      75% 82%,
+      72.5% 100%,
+      0% 100%
+    );
+  }
+  .slogan {
+    font-size: 48px;
+  }
+  .title,
+  .joinTitle {
+    font-size: 14px;
+    width: 22%;
+  }
+  .input,
+  .textarea {
+    font-size: 14px;
+  }
+  .socials {
+    width: 42%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 40px;
+  }
+  .topContent {
+    padding: 0 40px;
+  }
+
+  .formWrapper {
+    padding: 40px;
+    padding-bottom: 80px;
+    gap: 40px;
+  }
+  .form {
+    width: 45%;
+  }
+  .socials {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .imageWrapper {
+    clip-path: polygon(
+      0 0,
+      30% 0,
+      32.5% 18%,
+      100% 18%,
+      100% 82%,
+      70% 82%,
+      67.5% 100%,
+      0% 100%
+    );
+  }
+  .title,
+  .joinTitle {
+    width: 29%;
+  }
+  .socialText {
+    font-size: 12px;
+  }
+  .socialIcon {
+    width: 20px;
+  }
+  .slogan {
+    font-size: 42px;
+  }
+  .progressWrapper {
+    clip-path: polygon(0 50%, 50% 50%, 55% 0, 100% 0, 100% 100%, 0 100%);
+    height: 80px;
+  }
+  .numberCircle {
+    font-size: 14px;
+    width: 23px;
+    height: 23px;
+  }
+  .button {
+    font-size: 18px;
+  }
+  .progressItem,
+  .button {
+    padding: 10px 20px;
+  }
+  .progressBar {
+    transform: skew(45deg) scaleX(1.1) translateX(-10%);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .topContent {
+    padding: 0 32px;
+  }
+  .formWrapper {
+    gap: 20px;
+    padding: 32px;
+    padding-bottom: 60px;
+  }
+  .input,
+  .textarea {
+    padding: 8px 20px;
+  }
+  .socials {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .imageWrapper {
+    clip-path: polygon(
+      0 0,
+      45% 0,
+      47.5% 18%,
+      100% 18%,
+      100% 82%,
+      55% 82%,
+      52.5% 100%,
+      0% 100%
+    );
+  }
+  .title,
+  .joinTitle {
+    width: 45%;
+  }
+  .slogan {
+    font-size: 36px;
+  }
+  .formWrapper {
+    flex-direction: column-reverse;
+    padding-bottom: 75px;
+  }
+  .form {
+    width: 100%;
+  }
+  .socials {
+    align-items: center;
+  }
+  .social {
+    max-width: 360px;
+  }
+  .progressWrapper {
+    height: 45px;
+    clip-path: none;
+  }
+  .progressItem,
+  .button {
+    height: 100% !important;
+    padding: 10px;
+  }
+  .button {
+    font-size: 14px;
+    gap: 5px;
+  }
+  .numberCircle {
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    padding: 24px;
+  }
+  .topContent {
+    padding: 0 24px;
+  }
+  .imageWrapper {
+    clip-path: polygon(
+      0 0,
+      60% 0,
+      62.5% 18%,
+      100% 18%,
+      100% 82%,
+      40% 82%,
+      38.5% 100%,
+      0% 100%
+    );
+  }
+  .title,
+  .joinTitle {
+    width: 60%;
+  }
+  .slogan {
+    font-size: 32px;
+  }
+  .formWrapper {
+    padding: 24px;
+    padding-bottom: 65px;
+  }
+  .social {
+    max-width: 100%;
+  }
+  .progressItem:nth-child(1),
+  .progressItem:nth-child(2) {
+    width: 25%;
+  }
+  .button {
+    width: 50%;
+  }
+  .socialContent {
+    padding-right: 20px;
+  }
+  .form {
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .slogan {
+    font-size: 28px;
+  }
+  .title,
+  .joinTitle {
+    font-size: 12px;
+    width: 62%;
+  }
+  .socialContent {
+    padding-right: 10px;
+  }
+  .socialText {
+    font-size: 11px;
+    font-weight: 500;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .socials {
+    display: none;
+  }
+}

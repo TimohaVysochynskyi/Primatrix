@@ -1,5 +1,7 @@
 import { Field, Form, Formik, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import apiClient from "../../../api/apiClient";
+import toast from "react-hot-toast";
 import css from "./Ideas.module.css";
 
 export default function Ideas() {
@@ -45,9 +47,17 @@ export default function Ideas() {
             <Formik
               initialValues={initialValues}
               validationSchema={validationSchema}
-              onSubmit={(values) => {
-                // TODO: handle submit (API call)
-                console.log("ideas submit", values);
+              onSubmit={async (values, { setSubmitting, resetForm }) => {
+                try {
+                  await apiClient.post("/ideas", values);
+                  resetForm();
+                  toast.success("Идея успешно отправлена!");
+                } catch (error) {
+                  console.error(error);
+                  toast.error("Ошибка при отправке. Попробуйте позже.");
+                } finally {
+                  setSubmitting(false);
+                }
               }}
               validateOnBlur
               validateOnChange

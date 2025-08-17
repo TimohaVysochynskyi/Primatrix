@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
+import { Toaster } from "react-hot-toast";
 
 export default function Layout() {
   return (
@@ -10,6 +11,12 @@ export default function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <Toaster
+        position="top-center"
+        toastOptions={{
+          style: { fontSize: 16 },
+        }}
+      />
     </>
   );
 }

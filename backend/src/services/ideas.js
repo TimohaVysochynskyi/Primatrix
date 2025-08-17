@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { TELEGRAM_CHAT_ID, TELEGRAM_TOKEN } from '../constants';
+import { TELEGRAM_TOKEN, TELEGRAM_CHAT_ID } from '../constants/index.js';
 
 export async function sendIdeaToTelegram({ name, telegram, idea }) {
   const text = `Новая идея с сайта:\n\nИмя: ${name}\nTelegram: ${telegram}\nИдея: ${idea}`;

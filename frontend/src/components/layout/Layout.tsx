@@ -12,7 +12,7 @@ export default function Layout() {
       </main>
       <Footer />
       <Toaster
-        position="top-center"
+        position="top-right"
         toastOptions={{
           style: { fontSize: 16 },
         }}

@@ -43,7 +43,7 @@ export default function LoginPage() {
           validateOnBlur
           validateOnChange
         >
-          <Form className={css.formWrapper}>
+          <Form className={css.formWrapper} autoComplete="off">
             <svg
               viewBox="0 0 735 466"
               fill="none"
@@ -96,6 +96,8 @@ export default function LoginPage() {
                   type="text"
                   className={css.input}
                   placeholder="Никнейм или Email"
+                  autoComplete="off"
+                  spellCheck={false}
                 />
                 <ErrorMessage
                   name="emailOrNickname"

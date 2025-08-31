@@ -77,6 +77,10 @@
   color: #fff;
   line-height: 100%;
   outline: none;
+  transition: 0.3s;
+}
+.input:focus {
+  border-color: rgba(254, 104, 7, 1);
 }
 .input::placeholder {
   color: rgba(83, 21, 252, 1);

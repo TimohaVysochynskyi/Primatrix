@@ -63,7 +63,7 @@ export default function RegisterPage() {
           validateOnBlur
           validateOnChange
         >
-          <Form className={css.formWrapper}>
+          <Form className={css.formWrapper} autoComplete="off">
             <svg
               viewBox="0 0 735 466"
               fill="none"
@@ -116,6 +116,8 @@ export default function RegisterPage() {
                   type="text"
                   className={css.input}
                   placeholder="Придумайте никнейм"
+                  autoComplete="off"
+                  spellCheck={false}
                 />
                 <ErrorMessage
                   name="nickname"
@@ -129,6 +131,8 @@ export default function RegisterPage() {
                   type="email"
                   className={css.input}
                   placeholder="Email"
+                  autoComplete="new-password"
+                  spellCheck={false}
                 />
                 <ErrorMessage
                   name="email"

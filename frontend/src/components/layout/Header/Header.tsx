@@ -1,15 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useIsAuthenticated } from "../../../redux/hooks";
 import css from "./Header.module.css";
 import LanguageSwitch from "../LanguageSwitch/LanguageSwitch";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const isAuthenticated = useIsAuthenticated();
 
   const toggle = () => setOpen((o) => !o);
   const close = () => setOpen(false);
 
-  // prevent body scroll when burger open
   useEffect(() => {
     if (open) {
       const prev = document.body.style.overflow;
@@ -59,7 +60,15 @@ export default function Header() {
       <div className={css.actions}>
         <LanguageSwitch />
         <div className={css.buttonWrapper}>
-          <button className={css.button}>Вход</button>
+          {isAuthenticated ? (
+            <Link to="/dashboard" className={css.button}>
+              Профиль
+            </Link>
+          ) : (
+            <Link to="/auth/login" className={css.button}>
+              Вход
+            </Link>
+          )}
         </div>
       </div>
       {open && (

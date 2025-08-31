@@ -1,0 +1,287 @@
+.container {
+  min-height: calc(100vh - 141px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formWrapper {
+  width: 50%;
+  max-width: 730px;
+  aspect-ratio: 735/466;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.formBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.head {
+  width: 42.5%;
+  position: absolute;
+  left: 0;
+  top: 5%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.title,
+.subtitle {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 100%;
+  color: #fff;
+  text-decoration: none;
+}
+.title {
+  color: rgba(254, 104, 7, 1);
+}
+.triangle {
+  width: 9px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+  width: 60%;
+}
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.error {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 100%;
+  padding-left: 8px;
+}
+.input {
+  padding: 8px 40px;
+  background-color: rgba(40, 8, 135, 1);
+  border: 3px solid rgba(65, 15, 211, 1);
+  font-size: 16px;
+  color: #fff;
+  line-height: 100%;
+  outline: none;
+}
+.input::placeholder {
+  color: rgba(83, 21, 252, 1);
+}
+.button {
+  position: absolute;
+  right: 4px;
+  bottom: 3px;
+  z-index: 1;
+  padding: 14px 20px;
+  padding-left: 60px;
+  background-color: rgba(254, 104, 7, 1);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: #fff;
+  border: none;
+  text-transform: uppercase;
+  line-height: 100%;
+  clip-path: polygon(17.5% 0, 100% 0, 100% 100%, 0 100%);
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1440px) {
+  .formWrapper {
+    width: 55%;
+  }
+  .title,
+  .subtitle {
+    font-size: 16px;
+  }
+  .button {
+    font-size: 16px;
+    padding: 12px 18px;
+    padding-left: 55px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .formWrapper {
+    width: 65%;
+  }
+  .input {
+    padding: 7px 35px;
+    font-size: 15px;
+  }
+  .form {
+    gap: 18px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .formWrapper {
+    width: 75%;
+  }
+  .head {
+    gap: 10px;
+  }
+  .title,
+  .subtitle {
+    font-size: 15px;
+  }
+  .triangle {
+    width: 8px;
+  }
+  .button {
+    font-size: 15px;
+    padding: 11px 16px;
+    padding-left: 50px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .formWrapper {
+    width: 85%;
+  }
+  .form {
+    width: 65%;
+    gap: 16px;
+  }
+  .input {
+    padding: 6px 30px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    min-height: calc(100vh - 149px);
+    padding: 20px;
+  }
+  .formWrapper {
+    width: 95%;
+    max-width: none;
+  }
+  .head {
+    top: 6%;
+    gap: 8px;
+  }
+  .triangle {
+    width: 7px;
+  }
+  .form {
+    width: 70%;
+    gap: 14px;
+  }
+  .input {
+    padding: 6px 25px;
+    font-size: 13px;
+  }
+  .button {
+    font-size: 14px;
+    padding: 10px 14px;
+    padding-left: 45px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .formWrapper {
+    width: 100%;
+  }
+  .head {
+    width: 100%;
+    justify-content: flex-end;
+    top: 2%;
+    gap: 6px;
+  }
+  .triangle {
+    width: 6px;
+  }
+  .form {
+    width: 75%;
+    gap: 12px;
+  }
+  .input {
+    padding: 6px 20px;
+    font-size: 12px;
+  }
+  .button {
+    font-size: 13px;
+    padding: 9px 12px;
+    padding-left: 40px;
+    right: 2.5px;
+    bottom: 2px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .container {
+    padding: 15px;
+  }
+  .title,
+  .subtitle {
+    font-size: 14px;
+  }
+  .triangle {
+    width: 5px;
+  }
+  .form {
+    width: 80%;
+    gap: 10px;
+  }
+  .input {
+    padding: 5px 18px;
+    font-size: 12px;
+    border-width: 2px;
+  }
+  .button {
+    font-size: 12px;
+    padding: 8px 10px;
+    padding-left: 35px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .form {
+    width: 85%;
+    gap: 8px;
+  }
+  .input {
+    padding: 4px 15px;
+  }
+  .button {
+    font-size: 11px;
+    padding: 7px 8px;
+    padding-left: 30px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .container {
+    padding: 10px;
+  }
+  .form {
+    width: 90%;
+    gap: 6px;
+  }
+  .button {
+    font-size: 10px;
+    padding: 6px 6px;
+    padding-left: 25px;
+  }
+  .title,
+  .subtitle {
+    font-size: 13px;
+  }
+}

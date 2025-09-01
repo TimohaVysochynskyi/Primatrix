@@ -162,7 +162,7 @@ export const validatePassword = (password) => {
     issues.push('цифры');
   }
 
-  if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password)) {
+  if (!/[\W_]/.test(password)) {
     issues.push('специальные символы');
   }
 
